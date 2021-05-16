@@ -1,0 +1,130 @@
+body {
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+header::after {
+    content: "";
+    background: url("img/showcase.jpg") no-repeat center center/cover;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    filter: blur(10px);
+    transition: all 1000ms;
+}
+
+header:hover::after {
+    filter: none;
+}
+
+header:hover .content {
+    filter: blur(3px);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 1000ms;
+    height: 300px;
+    width: 350px;
+}
+
+.content .logo {
+    height: 180px;
+    width: 180px;
+}
+
+.content .about {
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.grid-2 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bg-light {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+footer p {
+    margin: 0;
+    padding: 2.2rem;
+}
+
+/* Small Screens */
+@media (max-width: 560px) {
+    header::after {
+        height: 50vh;
+    }
+
+    .content {
+        top: 5%;
+        margin-top: 5px;
+    }
+
+    .content .logo {
+        height: 140px;
+        width: 140px;
+    }
+
+    .content .about {
+        display: none;
+    }
+
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .services div {
+        border-bottom: 2px dashed #333;
+        padding: 1.2rem 1rem;
+    }
+}
+
+@media (max-height: 500px) {
+    .content h1,
+    .content .about {
+        display: none;
+    }
+}
